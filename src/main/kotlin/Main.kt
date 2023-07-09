@@ -1,5 +1,5 @@
-import lesson1.task2
+import lesson1.Lesson1Task2
 
 fun main(args: Array<String>) {
-    task2().main()
+    Lesson1Task2().main()
 }
