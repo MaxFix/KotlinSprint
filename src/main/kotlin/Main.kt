@@ -1,5 +1,3 @@
-import lesson1.Lesson1Task3
-
 fun main() {
     val year: Int = 1961
     var hour: Int = 9
