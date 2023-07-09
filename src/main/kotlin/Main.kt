@@ -1,3 +1,5 @@
+import lesson1.Lesson1Task4
+
 fun main(args: Array<String>) {
-    println("Hello World!")
+    Lesson1Task4().main()
 }
