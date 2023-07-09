@@ -1,5 +1,10 @@
-import lesson1.Lesson1Task2
+fun main() {
+    var ordersCount: Int  = 0
+    val congratulationsMessage2: String = "Thank's for order for our shop! <3"
+    var workersCount: Int = 2000
 
-fun main(args: Array<String>) {
-    Lesson1Task2().main()
+    println("var one: $ordersCount\nval two: $congratulationsMessage2")
+    //println(workersCount)
+    workersCount -= 1
+    println(workersCount)
 }
