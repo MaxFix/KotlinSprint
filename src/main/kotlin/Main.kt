@@ -1,6 +1,6 @@
-import lesson1.task1
+import lesson1.Lesson1Task1
 
 fun main(args: Array<String>) {
     println("Hello World!")
-    task1()
+    Lesson1Task1()
 }
