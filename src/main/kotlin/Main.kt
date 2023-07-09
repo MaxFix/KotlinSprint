@@ -1,5 +1,6 @@
 fun main() {
     var ordersCount: Int  = 0
+
     val congratulationsMessage2: String = "Thank's for order for our shop! <3"
     var workersCount: Int = 2000
 
@@ -7,4 +8,6 @@ fun main() {
     //println(workersCount)
     workersCount -= 1
     println(workersCount)
+
+    var congratulationsMessage: String = "Thank's for order for our shop! <3"
 }
