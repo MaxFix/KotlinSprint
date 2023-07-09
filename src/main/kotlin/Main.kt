@@ -1,6 +1,4 @@
-import lesson1.Lesson1Task1
-
-fun main(args: Array<String>) {
-    println("Hello World!")
-    Lesson1Task1()
+fun main() {
+    var ordersCount: Int  = 0
+    var congratulationsMessage: String = "Thank's for order for our shop! <3"
 }
