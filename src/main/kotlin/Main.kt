@@ -1,6 +1,9 @@
 fun main() {
-    val seconds: Int = 6480
-    val minutes: Int = seconds / 60
-    val remainder: Int = seconds % 60
-    println(String.format("%02d:%02d", minutes,remainder))
+    val firstStudent: Byte = 3
+    val secondStudent: Byte = 4
+    val thirdStudent: Byte = 3
+    val fourthStudent: Byte = 5
+    val sum: Double = (firstStudent.toDouble() + secondStudent.toDouble() +
+            thirdStudent.toDouble() + fourthStudent.toDouble()) / 4
+    println(sum)
 }
