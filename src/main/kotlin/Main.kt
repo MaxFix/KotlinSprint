@@ -1,6 +1,16 @@
 fun main() {
-    val seconds: Int = 6480
-    val minutes: Int = seconds / 60
-    val remainder: Int = seconds % 60
-    println(String.format("%02d:%02d", minutes,remainder))
+    val normalWorkersCount: Byte = 50
+    val normalWorkersSalary: Double = 30000.0
+    val newWorkersCount: Byte = 30
+    val newWorkersSalary: Double = 20000.0
+
+    val costForNormalWorkers : Double = normalWorkersSalary * normalWorkersCount
+    val costForNewWorkers : Double = newWorkersSalary * newWorkersCount
+
+    val generalExpensesForAllWorkers : Double = costForNormalWorkers + costForNewWorkers
+    val averageSalaryForMiddleWorker : Double = generalExpensesForAllWorkers/(normalWorkersCount + newWorkersCount)
+
+    println("Расходы на выплату зарплаты постоянных сотрудников: $costForNormalWorkers")
+    println("Общие расходы по ЗП после прихода стажеров: $costForNewWorkers")
+    println("Средняя ЗП одного сотрудника после устройства стажеров: $averageSalaryForMiddleWorker")
 }
