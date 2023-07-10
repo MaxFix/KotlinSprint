@@ -1,6 +1,7 @@
 fun main() {
-    val seconds: Int = 6480
-    val minutes: Int = seconds / 60
-    val remainder: Int = seconds % 60
-    println(String.format("%02d:%02d", minutes,remainder))
+    val clientMoney: Int = 70_000
+    val percents: Double =  16.7
+    val years: Byte = 20
+    val finalSum = clientMoney * (1 + (percents/100)) * years
+    println(String.format("%.3f",finalSum))
 }
