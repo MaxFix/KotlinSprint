@@ -1,6 +1,10 @@
 fun main() {
-    val seconds: Int = 6480
-    val minutes: Int = seconds / 60
-    val remainder: Int = seconds % 60
-    println(String.format("%02d:%02d", minutes,remainder))
+    val departureTimeHour: Int = 9
+    val departureTimeMinute: Int = 39
+    val travelTime: Int = 457
+
+    val departureTimeMinuteConvert: Int = departureTimeHour * 60 + departureTimeMinute
+    val arrivalTimeMinute: Int = departureTimeMinuteConvert + travelTime
+
+    println("Время прибытия поезда ${arrivalTimeMinute/60} часов и ${arrivalTimeMinute%60} минут")
 }
