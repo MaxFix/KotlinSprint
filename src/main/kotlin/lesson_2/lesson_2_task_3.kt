@@ -8,5 +8,5 @@ fun main() {
     val departureTimeMinuteConvert: Int = departureTimeHour * 60 + departureTimeMinute
     val arrivalTimeMinute: Int = departureTimeMinuteConvert + travelTime
 
-    println("Время прибытия поезда ${arrivalTimeMinute/60} часов и ${arrivalTimeMinute%60} минут")
+    println("Время прибытия поезда ${arrivalTimeMinute / 60} часов и ${arrivalTimeMinute % 60} минут")
 }
