@@ -7,9 +7,8 @@ fun main() {
         val legDay: String = "Упражнения для ног:"
         val backDay: String = "Упражнения для спины:"
         val pressDay: String = "Упражнения для пресса:"
-        val firstGroup: Boolean = currentDay % 2 == 1
-        val secondGroup: Boolean = currentDay % 2 == 0
+        val group: Int = currentDay % 2
 
-        println("$armDay $firstGroup\n$legDay $secondGroup" +
-                "\n$backDay $secondGroup\n$pressDay $firstGroup")
+        println("$armDay ${group == 1}\n$legDay ${group == 0}" +
+                "\n$backDay ${group == 0}\n$pressDay ${group == 1}")
 }
