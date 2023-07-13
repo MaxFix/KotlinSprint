@@ -1,14 +1,18 @@
 package lesson_5
 
+const val WELCOME_MESSAGE = "Добро пожаловать!"
+const val ACCESS_DENIED_MESSAGE = "Доступ запрещен."
 fun main() {
+    val expression: String = "2 + 3"
     val answer: Int = 5
-    val question: String = "Здравствуйте! Введите ответ на выражение 2 + 3 = "
+    val question: String = "Здравствуйте! Введите ответ на выражение $expression = "
 
     println(question)
     var inputAnswer: Int = readln().toInt()
     if (inputAnswer == answer) {
-        println("Добро пожаловать!")
-    } else {
-        println("Доступ запрещен.")
+        println(WELCOME_MESSAGE)
+    }
+    else {
+        println(ACCESS_DENIED_MESSAGE)
     }
 }
