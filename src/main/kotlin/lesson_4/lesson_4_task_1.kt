@@ -2,7 +2,7 @@ package lesson_4
 
 const val maxTables:Byte = 14
 fun main() {
-    var reservToday:Byte = 10
+    val reservToday:Byte = 10
     var reservTomorrow:Byte = 15
 
 
