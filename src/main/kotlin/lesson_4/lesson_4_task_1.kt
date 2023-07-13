@@ -1,11 +1,10 @@
 package lesson_4
 
-const val maxTables:Byte = 14
+const val MAX_TABLES:Byte = 14
+const val RESERV_TODAY:Byte = 10
 fun main() {
-    val reservToday:Byte = 10
-    var reservTomorrow:Byte = 15
+    val reservTomorrow:Byte = 15
 
-
-    println("Доступность столиков на сегодня: ${reservToday < maxTables}, " +
-            "\nДоступность столиков на завтра: ${reservTomorrow < maxTables}")
+    println("Доступность столиков на сегодня: ${RESERV_TODAY < MAX_TABLES}, " +
+            "\nДоступность столиков на завтра: ${reservTomorrow < MAX_TABLES}")
 }
