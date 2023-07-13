@@ -8,8 +8,7 @@ fun main() {
     var inputAnswer: Int = readln().toInt()
     if (inputAnswer == answer) {
         println("Добро пожаловать!")
+    } else {
+        println("Доступ запрещен.")
     }
-    else {
-            println("Доступ запрещен.")
-        }
 }
