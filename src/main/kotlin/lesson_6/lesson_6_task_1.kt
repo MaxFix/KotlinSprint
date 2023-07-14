@@ -19,6 +19,8 @@ fun main() {
         val incorrectLoginPassword = enteredLogin != login || enteredPassword != password
         if (incorrectLoginPassword) {
             println("Логин или пароль введены неверно")
+        } else {
+            println("Авторизация прошла успешно")
         }
-    } while (enteredLogin != login && enteredPassword != password)
+    } while (incorrectLoginPassword)
 }
