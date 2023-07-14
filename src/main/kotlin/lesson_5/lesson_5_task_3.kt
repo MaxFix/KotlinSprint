@@ -13,6 +13,7 @@ const val CONGRATULATION_MESSAGE = "Поздравляем! Вы выиграл�
 const val CONSOLATION_PRIZE_MESSAGE = "Вы выиграли утешительный приз!"
 const val INCORRECT_ANSWER_MESSAGE = "Неудача! Крутите барабан!"
 const val CORRECT_ANSWER_MESSAGE = "Правильный ответ $FIRST_SECRET_NUMBER и $SECOND_SECRET_NUMBER"
+
 fun main() {
     println(WELCOME_MESSAGE.trimMargin())
     println(ENTER_FIRST_NUMBER)
@@ -25,14 +26,13 @@ fun main() {
     val oneOfConditionsTrue: Boolean = ((firstNumber == FIRST_SECRET_NUMBER) || (secondNumber == SECOND_SECRET_NUMBER)) ||
             (firstNumber == SECOND_SECRET_NUMBER) || (secondNumber == FIRST_SECRET_NUMBER)
 
-
     if(bothConditionsTrue) {
         println(CONGRATULATION_MESSAGE)
     } else if (oneOfConditionsTrue) {
         println(CONSOLATION_PRIZE_MESSAGE)
         println(CORRECT_ANSWER_MESSAGE)
     } else {
-        println(INCORRECT_ANSWER_MESSAGE.trimMargin())
+        println(INCORRECT_ANSWER_MESSAGE)
         println(CORRECT_ANSWER_MESSAGE)
     }
 }
