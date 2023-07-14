@@ -6,6 +6,13 @@ const val LOGIN = "abc"
 const val PASSWORD = "bca"
 const val WELCOME_TEXT = "Добро пожаловать! Для входа подтвердите сначала свою настоящесть, решите простой пример"
 const val INCORRECT_ANSWER_TEXT = "Это неверно, повторите попытку"
+const val ACCESS_DENIED_TEXT = "Доступ запрещен"
+const val WELCOME_SHORT_TEXT = "Добро пожаловать!"
+
+const val ENTER_USER_LOGIN_TEXT = "Введите зарегистрированный ранее логин: "
+const val ENTER_USER_PASSWORD_TEXT = "Введите зарегистрированный ранее пароль: "
+const val LOGIN_OR_PASSWORD_IS_INCORRECT_TEXT = "Логин или пароль введены неверно"
+const val AUTH_IS_CORRECT_TEXT = "Авторизация прошла успешно"
 fun main() {
     var enteredLogin: String
     var enteredPassword: String
@@ -17,28 +24,29 @@ fun main() {
         val secondNumber: Int = Random.nextInt(10)
         val rightAnswer = firstNumber + secondNumber
         println("$firstNumber + $secondNumber = ")
+
         val userAnswer = readln().toInt()
         counter++
         if (userAnswer != rightAnswer || counter < 3) {
             println(INCORRECT_ANSWER_TEXT)
         } else if(counter == 3){
-            println("Доступ запрещен")
+            println(ACCESS_DENIED_TEXT)
         } else {
-            println("Добро пожаловать!")
+            println(WELCOME_SHORT_TEXT)
         }
     } while (userAnswer != rightAnswer || counter == 3)
 
     do {
-        println("Введите зарегистрированный ранее логин: ")
+        println(ENTER_USER_LOGIN_TEXT)
         enteredLogin = readln()
-        println("Введите зарегистрированный ранее пароль: ")
+        println(ENTER_USER_PASSWORD_TEXT)
         enteredPassword = readln()
 
         val incorrectLoginPassword = enteredLogin != LOGIN || enteredPassword != PASSWORD
         if (incorrectLoginPassword) {
-            println("Логин или пароль введены неверно")
+            println(LOGIN_OR_PASSWORD_IS_INCORRECT_TEXT)
         } else {
-            println("Авторизация прошла успешно")
+            println(AUTH_IS_CORRECT_TEXT)
         }
     } while (incorrectLoginPassword)
 }
