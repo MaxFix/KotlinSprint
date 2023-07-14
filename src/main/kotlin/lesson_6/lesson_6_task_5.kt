@@ -1,11 +1,8 @@
 package lesson_6
 
-import kotlin.random.Random
-
 const val LOGIN = "abc"
 const val PASSWORD = "bca"
 const val WELCOME_TEXT = "Добро пожаловать! Для входа подтвердите сначала свою настоящесть, решите простой пример"
-const val INCORRECT_ANSWER_TEXT = "Это неверно, повторите попытку"
 const val ACCESS_DENIED_TEXT = "Доступ запрещен"
 const val WELCOME_SHORT_TEXT = "Добро пожаловать!"
 
@@ -16,25 +13,28 @@ const val AUTH_IS_CORRECT_TEXT = "Авторизация прошла успеш
 fun main() {
     var enteredLogin: String
     var enteredPassword: String
-    var counter = 0
+    var attempts = 3
 
     println(WELCOME_TEXT)
-    do {
-        val firstNumber: Int = Random.nextInt(10)
-        val secondNumber: Int = Random.nextInt(10)
-        val rightAnswer = firstNumber + secondNumber
-        println("$firstNumber + $secondNumber = ")
+    while (attempts > 0) {
+        val num1 = (1..9).random()
+        val num2 = (1..9).random()
 
-        val userAnswer = readln().toInt()
-        counter++
-        if (userAnswer != rightAnswer || counter < 3) {
-            println(INCORRECT_ANSWER_TEXT)
-        } else if(counter == 3){
-            println(ACCESS_DENIED_TEXT)
-        } else {
+        println("Решите пример: $num1 + $num2 = ")
+        val answer = readln().toInt()
+
+        if (answer == num1 + num2) {
             println(WELCOME_SHORT_TEXT)
+            break
+        } else {
+            attempts--
+            println("Ответ неверный. Осталось попыток: $attempts")
         }
-    } while (userAnswer != rightAnswer || counter == 3)
+    }
+    if (attempts == 0) {
+        println(ACCESS_DENIED_TEXT)
+        return
+    }
 
     do {
         println(ENTER_USER_LOGIN_TEXT)
