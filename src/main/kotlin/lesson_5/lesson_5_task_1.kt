@@ -1,6 +1,6 @@
 package lesson_5
 
-const val WELCOME_MESSAGE = "Добро пожаловать!"
+const val WELCOME_MESSAGE2 = "Добро пожаловать!"
 const val ACCESS_DENIED_MESSAGE = "Доступ запрещен."
 fun main() {
     val expression: String = "2 + 3"
@@ -10,7 +10,7 @@ fun main() {
     println(question)
     var inputAnswer: Int = readln().toInt()
     if (inputAnswer == answer) {
-        println(WELCOME_MESSAGE)
+        println(WELCOME_MESSAGE2)
     }
     else {
         println(ACCESS_DENIED_MESSAGE)

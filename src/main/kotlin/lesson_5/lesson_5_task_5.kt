@@ -6,18 +6,18 @@ const val WELCOME_MESSAGE = """Добро пожаловать в лотерею
         |Либо угадать одно и получить утешительный приз :)
         |УДАЧИ! 
     """
-const val ENTER_FIRST_NUMBER = "Введите первое число: "
-const val ENTER_SECOND_NUMBER = "Введите второе число: "
-const val CONGRATULATION_MESSAGE = "Поздравляем! Вы выиграли главный приз!"
-const val CONSOLATION_PRIZE_MESSAGE = "Вы выиграли утешительный приз!"
-const val INCORRECT_ANSWER_MESSAGE = "Неудача! Крутите барабан!"
+const val ENTER_FIRST_NUMBER_LESSON5 = "Введите первое число: "
+const val ENTER_SECOND_NUMBER_LESSON5 = "Введите второе число: "
+const val CONGRATULATION_MESSAGE_LESSON5 = "Поздравляем! Вы выиграли главный приз!"
+const val CONSOLATION_PRIZE_MESSAGE_LESSON5 = "Вы выиграли утешительный приз!"
+const val INCORRECT_ANSWER_MESSAGE_LESSON5 = "Неудача! Крутите барабан!"
 fun main() {
     var firstSecretNumber = (0..100).random()
     var secondSecretNumber = (0..100).random()
-    println(WELCOME_MESSAGE.trimMargin())
-    println(ENTER_FIRST_NUMBER)
+    println(WELCOME_MESSAGE)
+    println(ENTER_FIRST_NUMBER_LESSON5)
     val firstNumber: Int = readln().toInt()
-    println(ENTER_SECOND_NUMBER)
+    println(ENTER_SECOND_NUMBER_LESSON5)
     val secondNumber: Int = readln().toInt()
 
     val bothConditionsTrue: Boolean = ((firstNumber == firstSecretNumber) && (secondNumber == secondSecretNumber)) ||
@@ -27,12 +27,12 @@ fun main() {
 
 
     if(bothConditionsTrue) {
-        println(CONGRATULATION_MESSAGE)
+        println(CONGRATULATION_MESSAGE_LESSON5)
     } else if (oneOfConditionsTrue) {
-        println(CONSOLATION_PRIZE_MESSAGE)
+        println(CONSOLATION_PRIZE_MESSAGE_LESSON5)
         println("Правильный ответ $firstSecretNumber и $secondSecretNumber")
     } else {
-        println(INCORRECT_ANSWER_MESSAGE)
+        println(INCORRECT_ANSWER_MESSAGE_LESSON5)
         println("Правильный ответ $firstSecretNumber и $secondSecretNumber")
     }
 }
