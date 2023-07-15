@@ -6,19 +6,23 @@ const val WELCOME_TEXT = """Привет! Давай сыграем с тобо�
 """
 const val SUCCESS_ANSWER_TEXT = "Это была великолепная игра!"
 const val INCORRECT_ANSWER_TEXT = "Неверный ответ! Попробуй ещё раз"
+const val NUMBER_OF_ATTEMPTS = 5
+
 fun main() {
     var numberOfAttempts = 0
     val randomNumber: Int = (1..9).random()
     println(WELCOME_TEXT.trimMargin())
     var userAnswer = readln().toInt()
-    while (userAnswer != randomNumber && numberOfAttempts != 4) {
-        println(INCORRECT_ANSWER_TEXT)
-        userAnswer = readln().toInt()
-        numberOfAttempts++
+
+    repeat(NUMBER_OF_ATTEMPTS - 1) {
+        if (userAnswer != randomNumber) {
+            println(INCORRECT_ANSWER_TEXT)
+            userAnswer = readln().toInt()
+        }
     }
-    if (userAnswer == randomNumber) {
-        println(SUCCESS_ANSWER_TEXT)
-    } else {
-        println("Попытки закончились.\nБыло загадано число $randomNumber")
+
+    when (userAnswer) {
+        randomNumber -> println(SUCCESS_ANSWER_TEXT)
+        else -> println("Попытки закончились.\nБыло загадано число $randomNumber")
     }
 }
