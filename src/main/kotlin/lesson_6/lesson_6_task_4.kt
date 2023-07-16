@@ -9,7 +9,6 @@ const val INCORRECT_ANSWER_TEXT = "Неверный ответ! Попробуй
 const val NUMBER_OF_ATTEMPTS = 5
 
 fun main() {
-    var numberOfAttempts = 0
     val randomNumber: Int = (1..9).random()
     println(WELCOME_TEXT.trimMargin())
     var userAnswer = readln().toInt()
@@ -21,8 +20,9 @@ fun main() {
         }
     }
 
-    when (userAnswer) {
-        randomNumber -> println(SUCCESS_ANSWER_TEXT)
-        else -> println("Попытки закончились.\nБыло загадано число $randomNumber")
+    if (userAnswer == randomNumber) {
+        println(SUCCESS_ANSWER_TEXT)
+    } else {
+        println("Попытки закончились.\nБыло загадано число $randomNumber")
     }
 }
