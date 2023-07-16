@@ -1,6 +1,6 @@
 package lesson_6
 
-const val WELCOME_TEXT = """Привет! Давай сыграем с тобой в ИГРУ!
+const val WELCOME_TEXT2 = """Привет! Давай сыграем с тобой в ИГРУ!
     |Я загадаю число, от 1 до 9, а ты попробуешь отгадать
     |Напиши свой ответ: 
 """
@@ -10,7 +10,7 @@ const val NUMBER_OF_ATTEMPTS = 5
 
 fun main() {
     val randomNumber: Int = (1..9).random()
-    println(WELCOME_TEXT.trimMargin())
+    println(WELCOME_TEXT2.trimMargin())
     var userAnswer = readln().toInt()
 
     repeat(NUMBER_OF_ATTEMPTS - 1) {
