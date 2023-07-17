@@ -12,6 +12,6 @@ fun main() {
             .toMutableList()
     }
     if (ingredientsString != null) {
-        ingredientsList.forEach{ println(it) }
+        ingredientsList.forEach { println(it) }
     }
 }
