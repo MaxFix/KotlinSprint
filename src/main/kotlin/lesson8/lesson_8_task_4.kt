@@ -16,8 +16,8 @@ fun main() {
     } else {
         ingredients.remove(changedIngridient)
         println("Введите ингридиент, который вы хотите добавить:")
-        val newIngridient = readln()
-        ingredients += newIngridient
+        val newIngredient = readln()
+        ingredients.add(ingredients.indexOf(changedIngridient) + 1, newIngredient)
         println("Готово! Вы сохранили следующий список: ")
         ingredients.forEach { println(it) }
     }
