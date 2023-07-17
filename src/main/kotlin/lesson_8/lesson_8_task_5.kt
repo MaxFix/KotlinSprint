@@ -5,9 +5,9 @@ fun main() {
     val ingredientsCount = readln().toInt()
 
     val listOfIngredients = Array(ingredientsCount) {
-            println("Введите название ингридиента")
-            readln()
-        }
+        println("Введите название ингридиента")
+        readln()
+    }
 
     println("Список добавленных элементов:")
     listOfIngredients.forEach { println(it) }
