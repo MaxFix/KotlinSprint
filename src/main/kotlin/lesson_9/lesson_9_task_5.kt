@@ -6,7 +6,8 @@ const val INGREDIENTS_COUNT = 5
 
 fun main() {
     var array = Array(INGREDIENTS_COUNT) {
-        readln() }
+        readln()
+    }
     var newString = ""
 
     array = array.toSet().sorted().toTypedArray()
