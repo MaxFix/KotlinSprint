@@ -15,7 +15,7 @@ fun main() {
     var enteredPassword: String
     var attempts = 3
 
-    println(WELCOME_TEXT2)
+    println(WELCOME_TEXT)
     while (attempts > 0) {
         val num1 = (1..9).random()
         val num2 = (1..9).random()
