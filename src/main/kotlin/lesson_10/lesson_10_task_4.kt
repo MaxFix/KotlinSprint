@@ -30,5 +30,3 @@ fun newRound(): Int {
     println("Вторым бросает робот: $robotTry")
     return humanTry - robotTry
 }
-
-
