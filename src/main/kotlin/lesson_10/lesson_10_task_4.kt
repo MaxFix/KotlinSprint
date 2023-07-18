@@ -2,7 +2,7 @@ package lesson_10
 
 
 fun main() {
-    var humanWins = 0 //??
+    var humanWins = 0
     newRound()
     println("Хотите бросить кости ещё раз?\nВведите 'Да' или 'Нет'")
     do {
