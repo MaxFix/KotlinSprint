@@ -10,7 +10,6 @@ fun main() {
         if (answer.lowercase() == "нет") {
             break
         }
-        newRound()
         if (newRound() > 0) {
             humanWins += 1
         }
