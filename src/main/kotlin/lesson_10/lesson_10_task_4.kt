@@ -3,7 +3,9 @@ package lesson_10
 
 fun main() {
     var humanWins = 0
-    newRound()
+    if (newRound() > 0) {
+        humanWins += 1
+    }
 
     do {
         println("Хотите бросить кости ещё раз?\nВведите 'Да' или 'Нет'")
