@@ -9,9 +9,7 @@ fun main() {
         ingredientsList += ingredientsString
             .split(',')
             .sorted()
-            .toMutableList()
     }
-    if (ingredientsString != null) {
-        ingredientsList.forEach { println(it) }
-    }
+
+    ingredientsList.forEach { println(it) }
 }
