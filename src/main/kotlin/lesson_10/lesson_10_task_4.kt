@@ -4,8 +4,9 @@ package lesson_10
 fun main() {
     var humanWins = 0
     newRound()
-    println("Хотите бросить кости ещё раз?\nВведите 'Да' или 'Нет'")
+
     do {
+        println("Хотите бросить кости ещё раз?\nВведите 'Да' или 'Нет'")
         val answer = readln()
         if (answer.lowercase() == "нет") {
             break
@@ -14,7 +15,7 @@ fun main() {
             humanWins += 1
         }
     } while (answer.lowercase() == "да")
-    println("количество побед человека $humanWins")
+    println("Количество побед человека $humanWins")
 }
 
 fun rollOfTheDice(): Int {
