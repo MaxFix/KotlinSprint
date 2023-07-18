@@ -10,7 +10,7 @@ fun main() {
     }
 
     println(
-        "На $countOfPortion порций вам понадобится: \nпротеин - ${newIngredients.first()} гр.,\n" +
+        "На $countOfPortion порций вам понадобится: \nпротеин - ${newIngredients[0]} гр.,\n" +
                 "соевого молока – ${newIngredients[1]} мл.,\nбанан – ${newIngredients[2]} шт."
     )
 }
