@@ -10,8 +10,8 @@ fun main() {
 
     println("Первым бросает человечество: $humanFirstTry")
     println("Вторым бросает робот: $robotFirstTry")
-    println("Первым бросает человечество: $humanSecondTry")
-    println("Вторым бросает робот: $robotSecondTry")
+    println("Третьим бросает человечество: $humanSecondTry")
+    println("Четвертым бросает робот: $robotSecondTry")
 
     if (humanSum > robotSum) {
         println("Победило человечество")
