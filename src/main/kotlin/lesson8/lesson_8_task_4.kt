@@ -17,7 +17,7 @@ fun main() {
         ingredients.remove(changedIngridient)
         println("Введите ингридиент, который вы хотите добавить:")
         val newIngredient = readln()
-        ingredients.add(ingredients.indexOf(changedIngridient) + 1, newIngredient)
+        ingredients[ingredients.indexOf(changedIngridient)] = newIngredient
         println("Готово! Вы сохранили следующий список: ")
         ingredients.forEach { println(it) }
     }
