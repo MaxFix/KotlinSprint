@@ -1,4 +1,4 @@
-package lesson8
+package lesson_8
 
 import java.util.*
 
