@@ -3,8 +3,8 @@ package lesson_11
 fun main() {
     val forum = Forum()
 
-    val user1 = forum.newUser(123, "Maksim", "123", "gang@mail.ri", "abcde")
-    val user2 = forum.newUser(124, "Evgen", "321", "am@yandex.ri", "edcba")
+    val user1 = forum.newUser( "Maksim", "123", "gang@mail.ri", "abcde")
+    val user2 = forum.newUser("Evgen", "321", "am@yandex.ri", "edcba")
 
     forum.newMessage(user1.id, "Hello world!")
     forum.newMessage(user2.id, "Привет ${user2.login}")
@@ -12,14 +12,16 @@ fun main() {
     forum.printThread()
 }
 
-class Forum(
-
-) {
+class Forum {
     private val users = mutableListOf<User>()
     private val messages = mutableListOf<Message>()
 
-    fun newUser(id: Int, login: String, password: String, email: String, bio: String): User {
-        val user = User(id, login, password, email, bio)
+    private fun generateId(): Int {
+        return (0..9999).random()
+    }
+
+    fun newUser(login: String, password: String, email: String, bio: String): User {
+        val user = User(generateId(), login, password, email, bio)
         users.add(user)
         return user
     }
@@ -45,7 +47,7 @@ class User(
     private var password: String,
     val email: String,
     var bio: String,
-) { }
+)
 
 class Message(
     private val author: User,
