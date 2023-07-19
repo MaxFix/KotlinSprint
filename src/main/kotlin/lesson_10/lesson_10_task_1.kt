@@ -13,11 +13,8 @@ fun main() {
     println("Третьим бросает человечество: $humanSecondTry")
     println("Четвертым бросает робот: $robotSecondTry")
 
-    if (humanSum > robotSum) {
-        println("Победило человечество")
-    } else println("Победила машина")
+    if (humanSum > robotSum) println("Победило человечество")
+    else println("Победила машина")
 }
 
-fun rollOfTheDice(): Int {
-    return (0 until 7).random()
-}
+fun rollOfTheDice(): Int = (0 until 7).random()
