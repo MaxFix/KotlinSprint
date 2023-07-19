@@ -11,7 +11,7 @@ fun passwordGenerator(length: Int): String {
     var counter = length
 
     while (counter > 0) {
-        val specialCharacters = "!\"#\$%&'()*+,-./ ".random()
+        val specialCharacters = ('#'..'&').random()
         val charset = ('0'..'9').random()
         if (password.length < length && counter % 2 == 0) {
             password += specialCharacters
