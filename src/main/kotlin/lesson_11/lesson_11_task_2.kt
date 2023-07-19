@@ -4,12 +4,20 @@ fun main() {
     val userVasa = User(123, "Vasa", "qwerty", "vasa@br.com", "test")
     val userUri = User(321, "Uri", "strew", "ura@grade.uk", "test2")
 
-    userUri.printUserData(userVasa.id, userVasa.login, userVasa.password, userVasa.email, userVasa.bio)
+    userVasa.printUserData(userVasa.id, userVasa.login, userVasa.password, userVasa.email, userVasa.bio)
     userUri.printUserData(userUri.id, userUri.login, userUri.password, userUri.email, userUri.bio)
 
+    userUri.addBio()
+    println(userUri.bio)
+
+    userVasa.changePassword()
+    println(userVasa.password)
+
+    userUri.getAndSendTextToUser()
+    userVasa.getAndSendTextToUser()
 }
 
-class User (
+class User(
     val id: Int,
     val login: String,
     var password: String,
@@ -17,14 +25,16 @@ class User (
     var bio: String,
 ) {
 
-    fun printUserData(id: Int, login: String, password: String, email:String, bio: String) {
-        println("Данные пользователя $login, его id: $id, " +
-                "его пароль $password, и его почта: $email, его био: $bio")
+    fun printUserData(id: Int, login: String, password: String, email: String, bio: String) {
+        println(
+            "Данные пользователя $login, его id: $id, " +
+                    "его пароль $password, и его почта: $email, его био: $bio"
+        )
     }
 
-    fun addBio(text: String = readln()) {
+    fun addBio() {
         println("Если хотите поменять информации в поле 'био' пользователя, введите его в следующую строку")
-        bio = text
+        bio = readln()
     }
 
     fun changePassword() {
@@ -40,6 +50,7 @@ class User (
     }
 
     fun getAndSendTextToUser() {
+        println("Введите отправляемый текст")
         val text = readln()
         println("Будет отправлен текст $text")
     }
