@@ -2,33 +2,52 @@ package lesson_10
 
 
 fun main() {
-    var humanWins = 0
-    if (newRound() > 0) {
-        humanWins += 1
+    var humanWinsCount = 0
+
+    newRound()
+    if (checkGameResult() > 0) {
+        humanWinsCount++
     }
 
     do {
-        println("Хотите бросить кости ещё раз?\nВведите 'Да' или 'Нет'")
-        val answer = readln()
-        if (answer.lowercase() == "нет") {
-            break
+        val continueGame = continueGame()
+        if (continueGame) {
+            newRound()
+            if (checkGameResult() > 0) {
+                humanWinsCount++
+            }
         }
-        if (newRound() > 0) {
-            humanWins += 1
-        }
-    } while (answer.lowercase() == "да")
-    println("Количество побед человека $humanWins")
+    } while (continueGame)
+    println("Количество побед человека: $humanWinsCount")
+}
+
+private fun continueGame(): Boolean {
+    println("Хотите бросить кости ещё раз?\nВведите 'Да' или 'Нет'")
+    val humanChoice = readln().lowercase()
+    return humanChoice == "да"
 }
 
 fun rollOfTheDice(): Int {
-    return (0 until 7).random()
+    return (1..6).random()
 }
 
-fun newRound(): Int {
-    val humanTry = rollOfTheDice() + rollOfTheDice()
-    val robotTry = rollOfTheDice() + rollOfTheDice()
+fun newRound() {
+    val humanTry = throwDice()
+    val robotTry = throwDice()
 
     println("Первым бросает человечество: $humanTry")
     println("Вторым бросает робот: $robotTry")
-    return humanTry - robotTry
+}
+
+fun throwDice(): Int {
+    return rollOfTheDice() + rollOfTheDice()
+}
+
+fun checkGameResult(): Int {
+    val humanWins = throwDice()
+    val robotWins = throwDice()
+    if (humanWins > robotWins) {
+        return 1
+    }
+    return 0
 }
