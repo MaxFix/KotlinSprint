@@ -16,9 +16,10 @@ class Weather2(
     val dayTemperature: Int = 12,
     val nightTemperature: Int = 10,
     val wasRaining: Boolean = false,
-    val atmospherePressure: Int = 1200) {
+    val atmospherePressure: Int = 1200
+) {
 
-fun printWeatherClassData() {
+    fun printWeatherClassData() {
         println(dayTemperature)
         println(nightTemperature)
         println(wasRaining)
