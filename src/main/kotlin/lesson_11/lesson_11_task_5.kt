@@ -15,9 +15,10 @@ fun main() {
 class Forum {
     private val users = mutableListOf<User>()
     private val messages = mutableListOf<Message>()
+    private var id = 1
 
     private fun generateId(): Int {
-        return (0..9999).random()
+        return id++
     }
 
     fun newUser(login: String, password: String, email: String, bio: String): User {
