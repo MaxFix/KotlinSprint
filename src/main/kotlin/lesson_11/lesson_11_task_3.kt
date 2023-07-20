@@ -5,20 +5,23 @@ fun main() {
     val user2 = User(nickname = "zavr", statuses = "микрофон выключен")
     val user3 = User(avatar = "gnom.png", nickname = "grim", statuses = "пользователь заглушен")
 
-    val room1 = Room(name = "Приватная комната", members = listOf(user1, user2, user3))
+
+    val room1 = Room(name = "Приватная комната", members = listOf(user1, user2, user3).toMutableList())
     room1.showGroupName()
     room1.startGroupCall()
     room1.scrollUp()
     room1.scrollDown()
     user1.showStatus()
     user2.showStatus()
-    room1.showUsers(0)
-    room1.showUsers(1)
+    room1.showUsers()
     room1.endGroupCall()
 
     println()
 
-    val room2 = Room(cover = "mew.png", name = "Business room", members = listOf(user2, user3))
+    val room2 = Room(cover = "mew.png", name = "Business room", members = listOf(user2,user3).toMutableList())
+    room2.showUsers()
+    room2.addUser(user1)
+    room2.showUsers()
     room2.showCover()
     user3.avatarLongTap()
     room2.muteMic()
@@ -28,7 +31,7 @@ fun main() {
 class Room(
     val cover: String = "default_cover.png",
     val name: String,
-    val members: List<User>,
+    val members: MutableList<User>,
 ) {
     fun showGroupName() {
         println("Название группы $name")
@@ -57,8 +60,14 @@ class Room(
         println("Включаем микрофон")
     }
 
-    fun showUsers(index: Int) {
-        println("Ник пользователя: ${members[index].nickname}")
+    fun showUsers() {
+        members.forEach{
+            println(members[members.indexOf(it)].nickname)
+        }
+    }
+
+    fun addUser(user: User) {
+        members.add(user)
     }
 
     fun showCover() {
@@ -67,7 +76,7 @@ class Room(
 }
 
 class User(
-    avatar: String = "avatar.png",
+    val avatar: String = "avatar.png",
     val nickname: String,
     val statuses: String,
 ) {
