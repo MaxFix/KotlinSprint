@@ -14,6 +14,10 @@ fun main() {
     weather2.wasRaining = true
     weather2.atmospherePressure = 1000
 
+    weather1.printWeatherData()
+    println()
+    weather2.printWeatherData()
+
 }
 
 class Weather {
@@ -21,4 +25,11 @@ class Weather {
     var nightTemperature = 12
     var wasRaining = false
     var atmospherePressure = 300
+
+    fun printWeatherData() {
+        println(dayTemperature)
+        println(nightTemperature)
+        println(wasRaining)
+        println(atmospherePressure)
+    }
     }
