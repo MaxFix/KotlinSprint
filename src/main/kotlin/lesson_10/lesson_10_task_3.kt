@@ -8,18 +8,14 @@ fun main() {
 
 fun passwordGenerator(length: Int): String {
     var password = ""
-    var counter = length
 
-    while (counter > 0) {
+    for(i in 0 until  length) {
         val specialCharacters = ('#'..'&').random()
         val charset = ('0'..'9').random()
-        if (password.length < length && counter % 2 == 0) {
-            password += specialCharacters
-            counter--
-        }
-        else {
-            password += charset
-            counter--
+        password += if (password.length < length && i % 2 == 0) {
+            specialCharacters
+        } else {
+            charset
         }
     }
     return password
