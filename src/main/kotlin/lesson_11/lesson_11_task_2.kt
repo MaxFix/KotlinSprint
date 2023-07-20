@@ -7,13 +7,16 @@ fun main() {
     userVasa.printUserData(userVasa.id, userVasa.login, userVasa.password, userVasa.email, userVasa.bio)
     userUri.printUserData(userUri.id, userUri.login, userUri.password, userUri.email, userUri.bio)
 
+    println("До изменений био пользователя ${userUri.login} ${userUri.bio}")
     userUri.addBio()
-    println(userUri.bio)
+    println("После изменения био пользователя ${userUri.login} ${userUri.bio}")
 
     userVasa.changePassword()
     println(userVasa.password)
 
+    println("Введите отправляемый текст:")
     userUri.getAndSendTextToUser()
+    println("Введите отправляемый текст:")
     userVasa.getAndSendTextToUser()
 }
 
@@ -22,7 +25,7 @@ class User(
     val login: String,
     var password: String,
     val email: String,
-    var bio: String,
+    var bio: String = "Empty bio",
 ) {
 
     fun printUserData(id: Int, login: String, password: String, email: String, bio: String) {
@@ -49,9 +52,7 @@ class User(
         }
     }
 
-    fun getAndSendTextToUser() {
-        println("Введите отправляемый текст")
-        val text = readln()
+    fun getAndSendTextToUser(text: String = readln()) {
         println("Будет отправлен текст $text")
     }
 }
