@@ -10,7 +10,8 @@ class Weather4(
     private val dayTemperature: Int = 12,
     private val nightTemperature: Int = 6,
     private val wasRaining: Boolean = false,
-    val atmospherePressure: Int = 2000) {
+    val atmospherePressure: Int = 2000
+) {
 
     init {
         printWeatherClassData()
