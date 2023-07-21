@@ -5,30 +5,30 @@ import kotlin.random.Random
 const val COUNT_OF_DAYS = 10
 
 fun main() {
-    val classObjects: MutableList<Weather5> = mutableListOf()
-    var middleDayTemperature = 0
-    var middleNightTemperature = 0
-    var middleAtmospherePressure = 0
-    var wasRainingCount = 0
+    val listOfDaysWeather: MutableList<Weather5> = mutableListOf()
+    val middleDayTemperature: MutableList<Int> = mutableListOf()
+    val middleNightTemperature: MutableList<Int> = mutableListOf()
+    val middleAtmospherePressure: MutableList<Int> = mutableListOf()
+    val wasRainingCount: MutableList<Int> = mutableListOf()
 
     for (i in (1..COUNT_OF_DAYS) ) {
-        classObjects += Weather5((0..35).random(),(-10..15).random(),
+        listOfDaysWeather += Weather5((0..35).random(),(-10..15).random(),
             Random.nextBoolean() ,(1000..2500).random() )
     }
 
-    classObjects.forEach{
-        middleDayTemperature += it.dayTemperature
-        middleNightTemperature += it.nightTemperature
-        middleAtmospherePressure += it.atmospherePressure
+    listOfDaysWeather.forEach{
+        middleDayTemperature.add(it.dayTemperature)
+        middleNightTemperature.add(it.nightTemperature)
+        middleAtmospherePressure.add(it.atmospherePressure)
         if (it.wasRaining) {
             wasRainingCount += 1
         }
     }
 
-    println("Средняя дневная температура за $COUNT_OF_DAYS дней: ${middleDayTemperature / COUNT_OF_DAYS}")
-    println("Средняя ночная температура за $COUNT_OF_DAYS дней: ${middleNightTemperature / COUNT_OF_DAYS}")
-    println("Среднее давление за $COUNT_OF_DAYS дней: ${middleNightTemperature / COUNT_OF_DAYS}")
-    println("Количество дождливых дней за $COUNT_OF_DAYS дней: ${middleNightTemperature / COUNT_OF_DAYS}")
+    println("Средняя дневная температура за $COUNT_OF_DAYS дней: ${middleDayTemperature.average()}")
+    println("Средняя ночная температура за $COUNT_OF_DAYS дней: ${middleNightTemperature.average()}")
+    println("Среднее давление за $COUNT_OF_DAYS дней: ${middleAtmospherePressure.average()}")
+    println("Количество дождливых дней за $COUNT_OF_DAYS дней: ${wasRainingCount.average()}")
 }
 
 class Weather5(
