@@ -1,7 +1,7 @@
 package lesson_12
 
 fun main() {
-    val monday = Weather3(25,10, atmospherePressure = 1200)
+    val monday = Weather3(25, 10, atmospherePressure = 1200)
     val tuesday = Weather3(10, 9, true, 500)
     val wednesday = Weather3(13, 14, atmospherePressure = 1460)
     val thursday = Weather3(23, 5, true, 1660)
@@ -23,7 +23,8 @@ class Weather3(
     private val dayTemperature: Int,
     private val nightTemperature: Int,
     private val wasRaining: Boolean = false,
-    val atmospherePressure: Int) {
+    val atmospherePressure: Int
+) {
 
     fun printWeatherClassData() {
         println(dayTemperature)
