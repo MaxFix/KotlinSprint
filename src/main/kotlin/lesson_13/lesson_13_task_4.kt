@@ -3,16 +3,16 @@ package lesson_13
 import java.util.*
 
 fun main() {
-    val contactsList: MutableList<PhoneBook3> = mutableListOf()
+    val contactsList: MutableList<PhoneBook4> = mutableListOf()
 
-    fun createContact(): PhoneBook3? {
+    fun createContact(): PhoneBook4? {
         println("Введите имя:")
         val name = readln().takeIf { it.isNotEmpty() }
         println("Введите номер телефона:")
         val phoneNumber = readln().toIntOrNull() ?: return null
         println("Введите название компании:")
         val company = readln().takeIf { it.isNotEmpty() }
-        return PhoneBook3(name, phoneNumber, company)
+        return PhoneBook4(name, phoneNumber, company)
     }
 
     do {
@@ -29,7 +29,7 @@ fun main() {
     }
 }
 
-class PhoneBook3(
+class PhoneBook4(
     private val name: String?,
     private val phoneNumber: Int,
     private val company: String?,
