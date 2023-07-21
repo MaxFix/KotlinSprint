@@ -1,9 +1,9 @@
 package lesson_11
 
 fun main() {
-    val user1 = User(nickname = "dino", statuses = "разговаривает")
-    val user2 = User(nickname = "zavr", statuses = "микрофон выключен")
-    val user3 = User(avatar = "gnom.png", nickname = "grim", statuses = "пользователь заглушен")
+    val user1 = User2(nickname = "dino", statuses = "разговаривает")
+    val user2 = User2(nickname = "zavr", statuses = "микрофон выключен")
+    val user3 = User2(avatar = "gnom.png", nickname = "grim", statuses = "пользователь заглушен")
 
 
     val room1 = Room(name = "Приватная комната", members = listOf(user1, user2, user3).toMutableList())
@@ -31,7 +31,7 @@ fun main() {
 class Room(
     val cover: String = "default_cover.png",
     val name: String,
-    val members: MutableList<User>,
+    val members: MutableList<User2>,
 ) {
     fun showGroupName() {
         println("Название группы $name")
@@ -66,7 +66,7 @@ class Room(
         }
     }
 
-    fun addUser(user: User) {
+    fun addUser(user: User2) {
         members.add(user)
     }
 
@@ -75,7 +75,7 @@ class Room(
     }
 }
 
-class User(
+class User2(
     val avatar: String = "avatar.png",
     val nickname: String,
     val statuses: String,

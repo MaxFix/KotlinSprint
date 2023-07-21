@@ -1,8 +1,8 @@
 package lesson_11
 
 fun main() {
-    val userVasa = User(123, "Vasa", "qwerty", "vasa@br.com", "test")
-    val userUri = User(321, "Uri", "strew", "ura@grade.uk", "test2")
+    val userVasa = User1(123, "Vasa", "qwerty", "vasa@br.com", "test")
+    val userUri = User1(321, "Uri", "strew", "ura@grade.uk", "test2")
 
     userVasa.printUserData(userVasa.id, userVasa.login, userVasa.password, userVasa.email, userVasa.bio)
     userUri.printUserData(userUri.id, userUri.login, userUri.password, userUri.email, userUri.bio)
@@ -20,7 +20,7 @@ fun main() {
     userVasa.getAndSendTextToUser()
 }
 
-class User(
+class User1(
     val id: Int,
     val login: String,
     var password: String,
