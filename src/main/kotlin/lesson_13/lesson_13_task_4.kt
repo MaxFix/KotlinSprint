@@ -7,11 +7,11 @@ fun main() {
 
     fun createContact(): PhoneBook3? {
         println("Введите имя:")
-        val name = readln()
+        val name = readln().takeIf { it.isNotEmpty() }
         println("Введите номер телефона:")
         val phoneNumber = readln().toIntOrNull() ?: return null
         println("Введите название компании:")
-        val company = readln()
+        val company = readln().takeIf { it.isNotEmpty() }
         return PhoneBook3(name, phoneNumber, company)
     }
 
