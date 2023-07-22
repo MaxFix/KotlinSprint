@@ -5,7 +5,7 @@ fun main() {
     try {
         val strNumber = readlnOrNull().toString()
         number = strNumber.toLong()
-    } catch (_: NumberFormatException) {
-        println("Номер может содержать только цифры")
+    } catch (e: NumberFormatException) {
+        println("Номер может содержать только цифры\n$e")
     }
 }
