@@ -11,18 +11,18 @@ fun main() {
     cargoShip.becomeTheBase()
     println()
     iceBreakerShip.printInfoAboutShip()
-    iceBreakerShip.canBreakIce()
+    iceBreakerShip.breakIce()
 }
 
 open class StandardShip1(
     private val name: String,
     private val speed: Int,
     private val loadCapacity: Int,
-    private val breakIce: Boolean = false,
+    private val canBreakIce: Boolean = false,
 ) {
     fun printInfoAboutShip() {
         println("Имя корабля $name\nСредняя скорость корабля: $speed\n" +
-                "Грузоподъемность корабля:$loadCapacity\nЛедокольность:$breakIce")
+                "Грузоподъемность корабля:$loadCapacity\nЛедокольность:$canBreakIce")
     }
 }
 
@@ -46,7 +46,7 @@ class Icebreaker1(
 ): StandardShip(
     name, speed, loadCapacity, breakIce = true
 ) {
-    fun canBreakIce() {
+    fun breakIce() {
         println("Колоть лёд: $breakIce")
     }
 }
