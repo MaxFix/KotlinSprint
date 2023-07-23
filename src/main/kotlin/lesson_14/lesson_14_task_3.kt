@@ -4,16 +4,16 @@ fun main() {
     val post = Post("Сообщение поста", "Генрих Том")
     val comment = Comments("Сообщение комментария","Ковал Пот", post)
 
-    post.publishPost()
+    post.send()
     println()
-    comment.publishPost()
+    comment.send()
 }
 
 open class Post(
     var messageText: String,
     val author: String,
 ) {
-    open fun publishPost() {
+    open fun send() {
         println("Текст поста: $messageText; Автор: $author")
     }
 }
@@ -25,7 +25,7 @@ class Comments(
 ) : Post(
     messageText, author
 ) {
-    override fun publishPost() {
+    override fun send() {
         println("Текст коммнетария: $messageText; Автор комментария : $author\n" +
                 "Пост: ${post.messageText}; Автор поста: ${post.author}")
     }
