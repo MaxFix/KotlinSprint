@@ -1,37 +1,59 @@
 package lesson_15
 
 fun main() {
-    val seagull = Seagull().seagullMove()
-    val crusian = Crusian().crusianMove()
-    val duck = Duck().duckMove()
+    val cruсian = Crucian()
+    cruсian.swim()
+    println()
+
+    val seagull = Seagull()
+    seagull.fly()
+    seagull.walk()
+    println()
+
+    val duck = Duck()
+    duck.fly()
+    duck.swim()
+    duck.walk()
 }
 
-interface CrusianInterface {
-    fun crusianMove()
+interface Swimming {
+    fun swim()
 }
 
-interface SeagullInterface {
-    fun seagullMove()
+interface Flying {
+    fun fly()
 }
 
-interface DuckInterface {
-    fun duckMove()
+interface Walking {
+    fun walk()
 }
 
-class Crusian : CrusianInterface {
-    override fun crusianMove() {
+class Crucian : Swimming {
+    override fun swim() {
         println("Карась плавает")
     }
 }
 
-class Seagull : SeagullInterface {
-    override fun seagullMove() {
+class Seagull : Flying, Walking {
+    override fun fly() {
         println("Чайка летает")
+    }
+
+    override fun walk() {
+        println("Чайка ходит")
     }
 }
 
-class Duck : DuckInterface {
-    override fun duckMove() {
-        println("Утка бегает")
+class Duck : Walking, Swimming, Flying {
+    override fun walk() {
+        println("Утка ходит")
+    }
+
+    override fun swim() {
+        println("Утка плавает")
+    }
+
+    override fun fly() {
+        println("Утка летает")
     }
 }
