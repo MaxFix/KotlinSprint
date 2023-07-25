@@ -12,11 +12,8 @@ class Circle2(
     private val radius: Double
 ) {
 
-    fun lengthOfCircle(): Double {
-        return 2 * pi * radius
-    }
+    fun lengthOfCircle(): Double = 2 * pi * radius
 
-    fun areaOfCircle(): Double {
-        return 2 * pi * radius.pow(2)
-    }
+    fun areaOfCircle(): Double = 2 * pi * radius.pow(2)
+
 }
