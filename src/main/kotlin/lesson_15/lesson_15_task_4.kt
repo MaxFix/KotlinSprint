@@ -5,19 +5,24 @@ fun main() {
     instr1.search()
 }
 
-open class Instrument(
-    val name: String,
-    val inStock: Int,
-) : Searchable {
+abstract class Product(
+    open val name: String,
+    inStock: Int,
+)
+
+class Instrument(
+    override val name: String,
+    inStock: Int,
+) : Product(name, inStock), Searchable {
     override fun search() {
         println("Выполняется поиск комплектующих для $name")
     }
 }
 
-class Accessory (
+class Accessory(
     name: String,
     inStock: Int,
-) : Instrument(name, inStock)
+) : Product(name, inStock)
 
 interface Searchable {
     fun search()
