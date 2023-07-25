@@ -19,7 +19,7 @@ fun main() {
 class CargoCar(
     private val numberOfPassengers: Byte,
     private val cargoQuantity: Byte,
-) : Movable, CanTransportPeople, CanTransportCargo {
+) : Movable, PeopleTransportation, CargoTransportation {
     override fun moving() {
         println("Грузовая машина едет")
     }
@@ -36,7 +36,7 @@ class CargoCar(
 
 class PassengerCar(
     private val numberOfPassengers: Byte,
-) : Movable, CanTransportPeople {
+) : Movable, PeopleTransportation {
     override fun moving() {
         println("Легковая машина едет")
     }
@@ -50,10 +50,10 @@ interface Movable {
     fun moving()
 }
 
-interface CanTransportPeople {
+interface PeopleTransportation {
     fun transportPeople()
 }
 
-interface CanTransportCargo {
+interface CargoTransportation {
     fun transportCargo()
 }
