@@ -1,27 +1,21 @@
 package lesson_17
 
 fun main() {
-    val quiz = QuizElement("What?", "All is OK")
-    quiz.questionSetter("Why?")
-    quiz.answerSetter("Because ..")
-    println(quiz.answerGetter())
+    val quiz = QuizElement()
+    println(quiz.question)
+    println(quiz.answer)
 }
 
 class QuizElement(
-    private var question: String,
-    private var answer: String,
 ) {
-    fun questionSetter(question: String) {
-        this.question = question
-        println(question)
-    }
+    var question: String = "Why?"
+        set(value) {
+            field = value
+        }
 
-    fun answerSetter(answer: String) {
-        this.answer = answer
-        println(answer)
-    }
-
-    fun answerGetter(): String {
-        return answer
-    }
+    var answer: String = "Bacause.."
+        get() = field
+        set(value) {
+            field = value
+        }
 }
