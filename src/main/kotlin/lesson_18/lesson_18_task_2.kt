@@ -1,18 +1,23 @@
 package lesson_18
 
 fun main() {
-    val throws4: FourFaces = FourFaces(4)
-    val throws6: SixFaces = SixFaces(6)
-    val throws8: EightFaces = EightFaces(8)
+    val throws4: NumberOfFaces = FourFaces(4)
+    val throws6: NumberOfFaces = SixFaces(6)
+    val throws8: NumberOfFaces = EightFaces(8)
 
-    println("Бросаем кубик с 4 гранями: ${throws4.throwDice()}")
-    println("Бросаем кубик с 6 гранями: ${throws6.throwDice()}")
-    println("Бросаем кубик с 8 гранями: ${throws8.throwDice()}")
+    val throwFaces = arrayOf<NumberOfFaces>(throws4, throws6, throws8)
+
+    fun throwAllCubs(throws: Array<NumberOfFaces>) {
+        throws.forEach { println(it.throwDice()) }
+    }
+
+    throwAllCubs(throwFaces)
 }
 
 open class NumberOfFaces {
     open fun throwDice() = 0
 }
+
 class FourFaces(
     private val fourFacesCount: Int,
 ) : NumberOfFaces() {
