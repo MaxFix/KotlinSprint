@@ -1,5 +1,7 @@
 package lesson_16
 
+private val MAX_HEALTH_COUNT = 30
+
 fun main() {
     val player = Player("John", 10, 5)
 
@@ -30,7 +32,7 @@ class Player(
     }
 
     fun healing(health: Int) {
-        if (!isDead) {
+        if (!isDead && healthCount <= MAX_HEALTH_COUNT) {
             this.healthCount += health
         }
     }
