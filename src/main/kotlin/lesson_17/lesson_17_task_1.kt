@@ -6,7 +6,7 @@ fun main() {
     println(quiz.answer)
 }
 
-class QuizElemen {
+class QuizElement {
     var question: String = "Why?"
         set(value) {
             field = value
