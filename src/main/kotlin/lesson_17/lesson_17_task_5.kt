@@ -11,9 +11,8 @@ class User2(
     login: String,
     password: String,
 ) {
-    private var rPassword: String = password
     var password: String = password
-        get() = "*".repeat(rPassword.length)
+        get() = "*".repeat(password.length)
         set(value) {
             field = value
             println("Вы не можете изменить пароль")
