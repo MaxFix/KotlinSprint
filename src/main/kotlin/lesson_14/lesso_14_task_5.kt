@@ -2,21 +2,27 @@ package lesson_14
 
 import kotlin.math.pow
 import kotlin.math.sqrt
+import kotlin.math.PI
 
-private val pi = 3.14
+const val WHITE = "белый"
+const val RED = "красный"
+const val BLUE = "синий"
+const val YELLOW = "жёлтый"
+const val PINK = "розовый"
+const val ORANGE = "оранжевый"
 fun main() {
-    val whiteCircle = Circle("белый", 10.0)
-    val redCircle = Circle("красный", 8.5)
-    val blueRectangle = Rectangle("синий", 5.5, 9.0)
-    val yellowRectangle = Rectangle("желтый", 4.3, 7.6)
-    val pinkTriangle = Triangle("розовый", 2.0, 4.0, 7.0)
-    val orangeTriangle = Triangle("оранжевый", 1.0, 5.0, 9.0)
+    val whiteCircle = Circle(WHITE, 10.0)
+    val redCircle = Circle(RED, 8.5)
+    val blueRectangle = Rectangle(BLUE, 5.5, 9.0)
+    val yellowRectangle = Rectangle(YELLOW, 4.3, 7.6)
+    val pinkTriangle = Triangle(PINK, 2.0, 4.0, 7.0)
+    val orangeTriangle = Triangle(ORANGE, 1.0, 5.0, 9.0)
 
     fun sumPerimeterRedFigures(figureList: List<Figure>) {
         var totalPerimeter = 0.0
 
         for (figure in figureList) {
-            if (figure.color.lowercase() == "красный") totalPerimeter += figure.perimeter()
+            if (figure.color.lowercase() == RED) totalPerimeter += figure.perimeter()
             else continue
         }
         println("Сумма периметров всех фигур: $totalPerimeter")
@@ -24,9 +30,12 @@ fun main() {
 
     fun sumAreaRedFigures(figureList: List<Figure>) {
         var totalArea = 0.0
-        for (figure in figureList) {
-            if (figure.color.lowercase() == "красный") totalArea += figure.area()
-            else continue
+        val redFigures = figureList.filter {
+            it.color.lowercase() == RED
+        }
+
+        for (figure in redFigures) {
+            totalArea += figure.area()
         }
         println("Сумма площадей всех фигур: $totalArea")
     }
@@ -47,26 +56,22 @@ abstract class Figure(
 
 class Circle(
     color: String,
-    val radius: Double,
-) : Figure(
-    color
-) {
+    private val radius: Double,
+) : Figure(color) {
     override fun area(): Double {
-        return pi * radius.pow(2)
+        return PI * radius.pow(2)
     }
 
     override fun perimeter(): Double {
-        return 2 * pi * radius
+        return 2 * PI * radius
     }
 }
 
 class Rectangle(
     color: String,
-    val width: Double,
-    val height: Double,
-) : Figure(
-    color
-) {
+    private val width: Double,
+    private val height: Double,
+) : Figure(color) {
     override fun area(): Double {
         return width * height
     }
@@ -79,12 +84,10 @@ class Rectangle(
 
 class Triangle(
     color: String,
-    val firstLength: Double,
-    val secondLength: Double,
-    val thirdLength: Double,
-) : Figure(
-    color
-) {
+    private val firstLength: Double,
+    private val secondLength: Double,
+    private val thirdLength: Double,
+) : Figure(color) {
     override fun area(): Double {
         val p = perimeter() / 2
         return sqrt(p * (p - firstLength) * (p - secondLength) * (p - thirdLength))
