@@ -19,7 +19,6 @@ class Package(
             field = value
             moveCounter++
         }
-            get() = field
 
         var moveCounter = 0
 }
