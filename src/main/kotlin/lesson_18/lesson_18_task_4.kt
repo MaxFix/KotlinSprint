@@ -10,20 +10,16 @@ fun main() {
     println(rectanglePackage.area())
 }
 
-open class Package {
+abstract class Package {
 
-    open fun area(): String {
-        return ""
-    }
+    abstract fun area(): String
 }
 
 class CubPackage(
     private var a: Double,
 ): Package() {
 
-    override fun area(): String {
-        return "Площадь коробки со стороной $a : ${6 * a.pow(2.0)}"
-    }
+    override fun area(): String = "Площадь коробки со стороной $a : ${6 * a.pow(2.0)}"
 }
 
 class RectanglePackage(
@@ -31,8 +27,6 @@ class RectanglePackage(
     private val b: Double,
     private val h: Double,
 ): Package() {
-    override fun area(): String {
-        return "Площадь коробки со сторонами $a, $b, $h : ${2 * (a * b + a * h + b * h)}"
-    }
 
+    override fun area(): String = "Площадь коробки со сторонами $a, $b, $h : ${2 * (a * b + a * h + b * h)}"
 }
