@@ -18,30 +18,24 @@ fun main() {
     animalsActives(animals)
 }
 
-open class Animals(
+abstract class Animals(
     val name: String,
 ) {
     open fun play() = "$name - играет"
 
     open fun sleep() = "$name - спит"
 
-    open fun eat() = ""
+    abstract fun eat(): String
 }
 
 class Fox(name: String) : Animals(name) {
-    override fun eat(): String {
-        return "$name - ест ягоды"
-    }
+    override fun eat(): String = "$name - ест ягоды"
 }
 
 class Dog(name: String) : Animals(name) {
-    override fun eat(): String {
-        return "$name - ест кости"
-    }
+    override fun eat(): String = "$name - ест кости"
 }
 
 class Cat(name: String) : Animals(name) {
-    override fun eat(): String {
-        return "$name - ест рыбу"
-    }
+    override fun eat() :String = "$name - ест рыбу"
 }
