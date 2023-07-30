@@ -1,19 +1,15 @@
 package lesson_16
 
 fun main() {
-    val user = User3("test", "12345")
-    user.checkPassword()
+    val user = User3("test", "1234")
+    println("Пароль надежен ${user.checkPassword()}")
 }
 
 class User3(
     val login: String,
     private val password: String,
 ) {
-    fun checkPassword() {
-        if(password.length > 4 && password.any{it.isDigit()}) {
-            println("Пароль надежен")
-        } else {
-            println("Пароль НЕНАДЁЖЕН")
-        }
+    fun checkPassword(): Boolean {
+        return password.length > 4 && password.any { it.isDigit() }
     }
 }
