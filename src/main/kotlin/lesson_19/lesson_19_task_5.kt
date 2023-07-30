@@ -19,8 +19,8 @@ fun main() {
         println("Введите пол, доступны варианты ${Gender.FEMALE.description}/${Gender.MALE.description}")
         val gender = readln()
 
-        val test = getGender(gender)
-        val user = Human(name, test)
+        val getUserGender = getGender(gender.lowercase())
+        val user = Human(name, getUserGender)
 
         usersList.add(user)
     }
@@ -32,9 +32,9 @@ fun main() {
 }
 
 enum class Gender(val description: String) {
-    MALE("Мужской"),
-    FEMALE("Женский"),
-    OTHER("Другой"),
+    MALE("мужской"),
+    FEMALE("женский"),
+    OTHER("другой"),
 }
 
 class Human(val name: String, val gender: Gender)
