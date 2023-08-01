@@ -1,20 +1,44 @@
 package lesson_18
 
+
 fun main() {
-    val screen = Screen(2,15)
+    val screen = Screen()
+    val dot = Dot(3, 5)
+    val square = Square(dot, 12)
+    val circle = Circle(dot, 9)
 
-    val square = screen.draw("квадрат")
-    val circle = screen.draw("круг")
-    val dot = screen.draw("точка")
-
+    screen.draw(dot)
+    screen.draw(square)
+    screen.draw(circle)
 }
 
-abstract class Figure(val x: Number, val y: Number) {
-    open fun draw(figure: String) {}
+abstract class Figure {
+    abstract fun draw()
 }
 
-class Screen(x: Number, y: Number) : Figure(x, y) {
-    override fun draw(figure: String) {
-        println("Рисуем фигуру $figure c координат $x и $y")
+class Square(private val leftTop: Dot, private val sideLenght: Number) : Figure() {
+    override fun draw() {
+        println(
+            "Рисуем квадрат с начальной координатой ${leftTop.x}, ${leftTop.y} " +
+                    "и длиной стороны $sideLenght"
+        )
+    }
+}
+
+class Circle(private val center: Dot, private val radius: Number) : Figure() {
+    override fun draw() {
+        println("Рисуем круг с центром в точке ${center.x}, ${center.y} и радиусом $radius")
+    }
+}
+
+class Dot(val x: Number, val y: Number) : Figure() {
+    override fun draw() {
+        println("Рисуем точку по координатам $x, $y")
+    }
+}
+
+class Screen {
+    fun draw(figure: Figure) {
+        figure.draw()
     }
 }
