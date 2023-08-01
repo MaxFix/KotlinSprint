@@ -5,7 +5,6 @@ fun main() {
     val lambdas = list.forEachIndexed { index, s ->
         if (index % 2 == 0) {
             println("Нажат элемент $s")
-        } else {
         }
     }
 }
