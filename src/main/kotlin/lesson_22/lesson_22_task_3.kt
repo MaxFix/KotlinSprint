@@ -3,9 +3,10 @@ package lesson_22
 fun main() {
     val sample = Experiment(12, "Example", "Red")
 
-    println("ID объекта: ${sample.id}")
-    println("Заголовок объекта: ${sample.title}")
-    println("Цвет объекта: ${sample.color}")
+    val (id, title, color) = sample
+    println("ID объекта: $id")
+    println("Заголовок объекта: $title")
+    println("Цвет объекта: $color")
 }
 
 data class Experiment(
